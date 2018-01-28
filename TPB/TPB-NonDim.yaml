@@ -20,7 +20,7 @@ disp:
     lag_jacobian: 5
     type: ksponly
   pc:
-    type: ml
+    type: bjacobi
 cs0001:
     hookesLaw:  
         type: isotropic
