@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -q fdr3
+#PBS -l select=1:ncpus=16
+#PBS -V
+#PBS -j oe
+
+NNODES=`wc -l < $PBS_NODEFILE`
+let "NTASKS = $NNODES * $NCPUS"
+echo Total MPI tasks: $NTASKS
+
+cd $PBS_O_WORKDIR
+mpirun -np $NTASKS vDef -prefix TPB-Crack-0.001-tri3 -options_file_yaml TPB-NonDim.yaml
+
+
