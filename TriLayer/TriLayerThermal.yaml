@@ -19,7 +19,7 @@ disp:
   snes:
     type: ksponly
   pc:
-    type: bjacobi
+    type: ml
 heatxfer:
     mode: transient
     initialtemp: 0
