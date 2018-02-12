@@ -10,7 +10,7 @@ set info on
 #{a = 4.5*mm}
 #{lc = 3*mm}
 #{epsc = .001*mm}
-#{theta = PI/4}
+#{theta = atan(0.5)}
 
 #{ell = 0.3*mm}
 #{hf = ell/6}
@@ -22,12 +22,12 @@ set info on
 
 
 create vertex x 0 y {a} z 0
-create vertex x {a/tan(theta)} y 0 z 0
+create vertex x {a*sin(theta)} y 0 z 0
 create vertex x {l/2} y 0 z 0
 create vertex x {l/2} y {w} z 0
 create vertex x {-l/2} y {w} z 0
 create vertex x {-l/2} y 0 z 0
-create vertex x {-a/tan(theta)} y 0 z 0
+create vertex x {-a*sin(theta)} y 0 z 0
 
 create surface vertex all
 
@@ -79,6 +79,7 @@ block 10 to 99 element type bar2
 export mesh {filename} dimension 2 block all overwrite
 
 quality volume all shape global list verbose errors
+
 
 
 
