@@ -31,7 +31,7 @@ create vertex x {-a*sin(theta)} y 0 z 0
 
 create surface vertex all
 
-create surface rectangle width {a/tan(theta)} height {1.8*w}
+create surface rectangle width {3*a*sin(theta)} height {1.8*w}
 webcut body 1 sweep surface 2 vector 0 0 1 through_all 
 delete body 2
 
@@ -43,8 +43,8 @@ create vertex x {L/2} y 0 z 0
 create vertex x {-L/2} y 0 z 0
 
 split curve 4 at vertex 20
-split curve 2 at vertex 21
-split curve 6 at vertex 22
+split curve 13 at vertex 21
+split curve 14 at vertex 22
 
 webcut surface 4 plane yplane offset {a+lc}
 webcut surface 5 plane xplane
@@ -54,22 +54,24 @@ unmerge curve 34
 
 block 1 surface 6 7 8 
 block 2 surface 3
-block 30 curve 15 16 18 19 34 36
+block 30 curve 1 7 34 36
 
-nodeset 401 vertex 21
-nodeset 402 vertex 22
+nodeset 402 vertex 21
+nodeset 401 vertex 22
 nodeset 400 vertex 20 
 
 draw block all nodeset all
 hardcopy "TPB-Crack.png" png
 
-surface all scheme trimesh
+surface all scheme tridelaunay
+tridelaunay point placement asp
 surface 6 7 8 size {hf}
 mesh surface 6 7 8
 
+tridelaunay point placement gq
 curve 3 5 size {hc}
 mesh curve 3 5
-surface 3 sizing function type bias start curve 13 29 30 32 33 finish curve 3 5
+surface 3 sizing function type bias start curve 29 33 16 32 30 finish curve 3 5
 mesh surface 3
 smooth surface all
 
@@ -79,6 +81,7 @@ block 10 to 99 element type bar2
 export mesh {filename} dimension 2 block all overwrite
 
 quality volume all shape global list verbose errors
+
 
 
 

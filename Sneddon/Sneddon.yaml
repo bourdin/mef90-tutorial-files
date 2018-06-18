@@ -9,9 +9,12 @@ time:
     max: .4
     numstep: 300
 heatxfer:
-  mode: null
+    timestepping: 
+        type: null
 defmech:
-  mode: quasistatic
+    mode: quasistatic
+    solver:
+        type: altmin
 temperature:
     offset: 0
 CrackPressure:

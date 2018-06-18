@@ -5,15 +5,13 @@ defmech:
     timestepping: 
         type: quasistatic
     solver:
-        type: altmin
-    damage:
-        atol: 1.0e-3
-    sor:
-        omega: 1.4
-    pclag: 5
+        type: QuasiNewton2
 disp:
     snes:
-        type: ksponly
+        linesearch:
+            type: cp
+        lag:
+            preconditioner: 5
     pc:
         type: ml
 heatxfer:
@@ -23,8 +21,8 @@ temperature:
     offset: 0
 time:
     min: 0
-    max: 3
-    numstep: 1
+    max: 5
+    numstep: 21
 cs0001:
     hookesLaw:  
         type: isotropic

@@ -2,7 +2,10 @@ verbose: 1
 boundaryDisplacement_scaling: linear
 defmech:
     irrevthres: 0.
-    mode: quasistatic
+    timestepping: 
+        type: quasistatic
+    solver:
+        type: altmin
     damage:
         atol: 1.0e-3
     sor:
@@ -14,7 +17,8 @@ disp:
     pc:
         type: ml
 heatxfer:
-    mode: null
+    timestepping: 
+        type: null
 temperature:
     offset: 0
 time:

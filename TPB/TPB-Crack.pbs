@@ -4,6 +4,7 @@
 #PBS -V
 #PBS -j oe
 
+unset I_MPI_FABRICS
 NNODES=`wc -l < $PBS_NODEFILE`
 let "NTASKS = $NNODES * $NCPUS"
 echo Total MPI tasks: $NTASKS

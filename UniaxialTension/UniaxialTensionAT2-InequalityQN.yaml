@@ -5,15 +5,13 @@ defmech:
     timestepping: 
         type: quasistatic
     solver:
-        type: altmin
-    damage:
-        atol: 1.0e-3
-    sor:
-        omega: 1.4
-    pclag: 5
+        type: QuasiNewton2
 disp:
     snes:
-        type: ksponly
+        linesearch:
+            type: cp
+        lag:
+            preconditioner: 5
     pc:
         type: ml
 heatxfer:
@@ -24,7 +22,7 @@ temperature:
 time:
     min: 0
     max: 3
-    numstep: 1
+    numstep: 21
 cs0001:
     hookesLaw:  
         type: isotropic
@@ -32,10 +30,10 @@ cs0001:
         PoissonRatio:  0.
         PlaneStress: 0
     FractureToughness: 1.
-    internallength: .05
+    internallength: .03
     residualstiffness: 0.
     damage:
-        type: AT1
+        type: AT2
     plasticity:
         type: NONE
     displacementbc: no,no,no

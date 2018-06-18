@@ -11,19 +11,15 @@ heatxfer:
 temperature:
     offset: 0
 defmech:
-  timeStepping: 
+  timestepping: 
     type: quasistatic
   solver:
-    type: altmin
-  damage:
-    atol: 1.0e-3
-  sor:
-    omega: 1.4
-  pclag: 5
+    type: quasiNewton2
 disp:
   snes:
     lag_jacobian: 5
-    type: ksponly
+    linesearch:
+      type: cp
   pc:
     type: ml
 cs0001:
