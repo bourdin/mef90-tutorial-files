@@ -47,12 +47,16 @@ cs0002:
     internallength: 3.3e-3
     residualstiffness: 0.
     damage:
-        type: AT2Elastic
+        type: AT1Elastic
     plasticity:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
 cs0030:
+    displacementbc: no,no,no
+    damageBC: yes
+    boundaryDamage: 1.
+cs0031:
     displacementbc: no,no,no
     damageBC: yes
     boundaryDamage: 1.

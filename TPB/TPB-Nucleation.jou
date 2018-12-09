@@ -53,6 +53,7 @@ block 30 curve 1 7
 nodeset 400 vertex 23 
 nodeset 401 vertex 25
 nodeset 402 vertex 24
+nodeset 500 vertex 1
 
 draw block all nodeset all
 hardcopy "TPB-Nucleation.png" png

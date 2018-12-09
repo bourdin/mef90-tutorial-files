@@ -6,24 +6,17 @@ time:
     numstep: 51
     interpolation: linear
 heatxfer:
-    timestepping: 
-        type: null
+    mode: null
 temperature:
     offset: 0
 defmech:
-  timeStepping: 
-    type: quasistatic
-  solver:
-    type: altmin
+  mode: quasistatic
   damage:
     atol: 1.0e-3
   sor:
     omega: 1.4
   pclag: 5
 disp:
-  snes:
-    lag_jacobian: 5
-    type: ksponly
   pc:
     type: ml
 cs0001:
@@ -32,11 +25,11 @@ cs0001:
         YoungsModulus: 1.
         PoissonRatio:  0.35
         PlaneStress: 0
-    FractureToughness: 1.
-    internallength: 3.36e-3
+    FractureToughness: .03
+    internallength: .15
     residualstiffness: 0.
     damage:
-        type: AT1
+        type: AT1Elastic
     plasticity:
         type: NONE
     displacementbc: no,no,no
@@ -47,40 +40,29 @@ cs0002:
         YoungsModulus: 1.
         PoissonRatio:  0.35
         PlaneStress: 0
-    FractureToughness: 1.
-    internallength: 3.3e-3
+    FractureToughness: .01
+    internallength: 0.15
     residualstiffness: 0.
     damage:
-        type: AT1Elastic
+        type: AT1
     plasticity:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
 cs0030:
-    displacementbc: no,no,no
+    displacementbc: yes,yes,no
+    boundaryDisplacement: 0,0.5,0.
     damageBC: yes
-    boundaryDamage: 1.
+    boundaryDamage: 0.
 cs0031:
-    displacementbc: no,no,no
+    displacementbc: yes,yes,no
+    boundaryDisplacement: 0,-0.5.,0.
     damageBC: yes
-    boundaryDamage: 1.
+    boundaryDamage: 0.
 cs0040:
     displacementbc: no,no,no
     damageBC: yes
-    boundaryDamage: 0.
-vs0400:
-    displacementBC: yes,yes,no
-    boundaryDisplacement: 0,-1,0
-    damageBC: yes
-    boundaryDamage: 0.
-vs0401:
-    displacementBC: no,yes,no
-    boundaryDisplacement: 0,0,0
-    damageBC: yes
-    boundaryDamage: 0.
-vs0402:
-    displacementBC: no,yes,no
-    boundaryDisplacement: 0,0,0
-    damageBC: yes
-    boundaryDamage: 0.
-
+    boundaryDamage: 1.
+cs0041:
+    displacementbc: no,no,no
+    damageBC: no
