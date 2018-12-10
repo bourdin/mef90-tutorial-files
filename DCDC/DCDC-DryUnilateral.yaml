@@ -31,7 +31,7 @@ cs0001:
         PoissonRatio:  0.35
         PlaneStress: 0
     FractureToughness: .03
-    internallength: .15
+    internallength: .06
     residualstiffness: 0.
     damage:
         type: AT1Elastic
@@ -46,7 +46,7 @@ cs0002:
         PoissonRatio:  0.35
         PlaneStress: 0
     FractureToughness: .01
-    internallength: 0.15
+    internallength: 0.06
     residualstiffness: 0.
     damage:
         type: AT1
