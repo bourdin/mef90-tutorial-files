@@ -2,7 +2,7 @@
 verbose: 1
 time:
     min: 0
-    max: 10
+    max: 2
     numstep: 51
     interpolation: linear
 heatxfer:
@@ -50,13 +50,13 @@ cs0002:
     displacementbc: no,no,no
     damageBC: no
 cs0030:
-    displacementbc: no,yes,no
-    boundaryDisplacement: 0,0.5,0.
+    displacementbc: yes,yes,no
+    boundaryDisplacement: 0,0,0
     damageBC: yes
     boundaryDamage: 0.
 cs0031:
-    displacementbc: no,yes,no
-    boundaryDisplacement: 0,-0.5,0.
+    displacementbc: no,no,no
+    Force: 0,-1,0
     damageBC: yes
     boundaryDamage: 0.
 cs0040:
@@ -66,14 +66,3 @@ cs0040:
 cs0041:
     displacementbc: no,no,no
     damageBC: no
-vs0500:
-    displacementbc: yes,yes,no
-    boundaryDisplacement: 0,0.5.,0.
-    damageBC: yes
-    boundaryDamage: 0.
-vs0501:
-    displacementbc: yes,yes,no
-    boundaryDisplacement: 0,-0.5.,0.
-    damageBC: yes
-    boundaryDamage: 0.
-

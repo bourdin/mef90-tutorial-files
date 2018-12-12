@@ -56,7 +56,7 @@ cs0030:
     boundaryDamage: 0.
 cs0031:
     displacementbc: yes,yes,no
-    boundaryDisplacement: 0,-0.5.,0.
+    boundaryDisplacement: 0,-0.5,0.
     damageBC: yes
     boundaryDamage: 0.
 cs0040:
