@@ -1,0 +1,73 @@
+### global options
+verbose: 1
+time:
+    interpolation: exo
+heatxfer:
+    timestepping: 
+        type: null
+temperature:
+    offset: 0
+defmech:
+  timeStepping: 
+    type: quasistatic
+  solver:
+    type: altmin
+  damage:
+    atol: 1.0e-3
+  sor:
+    omega: 1.
+  pclag: 1
+disp:
+  snes:
+    lag_jacobian: 5
+  pc:
+    type: ml
+boundaryDisplacement:
+  scaling: file
+cs0001:
+    hookesLaw:  
+        type: isotropic
+        YoungsModulus: 1.
+        PoissonRatio:  0.35
+        PlaneStress: 0
+    FractureToughness: .05
+    internallength: .15
+    residualstiffness: 1.e-5
+    damage:
+        type: AT1elastic
+    plasticity:
+        type: NONE
+    displacementbc: no,no,no
+    damageBC: no
+cs0002:
+    hookesLaw:  
+        type: isotropic
+        YoungsModulus: 1.
+        PoissonRatio:  0.35
+        PlaneStress: 0
+    FractureToughness: .05
+    internallength: .15
+    residualstiffness: 1.e-5
+    damage:
+        type: AT1
+    UnilateralContact:
+        type: HydrostaticDeviatoric
+    plasticity:
+        type: NONE
+    displacementbc: no,no,no
+    damageBC: no
+cs0030:
+    displacementbc: no,yes,no
+    boundaryDisplacement: 0.,-1.,0.
+    damageBC: yes
+    boundaryDamage: 0.
+cs0040:
+    displacementbc: no,yes,no
+    boundaryDisplacement: 0.,0.,0.
+    damageBC: yes
+    boundaryDamage: 0.
+vs0500:
+    displacementBC: yes,yes,no
+    boundaryDisplacement: 0,0,0
+    damageBC: yes
+    boundaryDamage: 0.
