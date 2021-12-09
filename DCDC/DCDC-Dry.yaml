@@ -1,21 +1,26 @@
 ### global options
 verbose: 1
 time:
-    min: 0
-    max: 10
+    min: 3
+    max: 5
     numstep: 51
     interpolation: linear
 heatxfer:
-    mode: null
+    timestepping: 
+        type: null
 temperature:
     offset: 0
 defmech:
-  mode: quasistatic
-  damage:
-    atol: 1.0e-3
-  sor:
-    omega: 1.4
-  pclag: 5
+    irrevthres: 0.
+    timestepping: 
+        type: quasistatic
+    solver:
+        type: altmin
+    damage:
+        atol: 1.0e-3
+    sor:
+        omega: 1.4
+    pclag: 5
 disp:
   pc:
     type: ml

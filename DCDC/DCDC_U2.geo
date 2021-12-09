@@ -1,3 +1,5 @@
+Mesh.Format=1;
+Mesh.MshFileVersion=2;
 W=4;
 H=20;
 Wf = 1.2;

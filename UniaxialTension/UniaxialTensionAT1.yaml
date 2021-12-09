@@ -1,5 +1,14 @@
 verbose: 1
 boundaryDisplacement_scaling: linear
+time:
+    min: 0
+    max: 5
+    numstep: 21
+heatxfer:
+    timestepping: 
+        type: null
+temperature:
+    offset: 0
 defmech:
     irrevthres: 0.
     timestepping: 
@@ -16,15 +25,15 @@ disp:
         type: ksponly
     pc:
         type: ml
-heatxfer:
-    timestepping: 
-        type: null
-temperature:
-    offset: 0
-time:
-    min: 0
-    max: 5
-    numstep: 21
+damage:
+    snes:
+        atol: 1e-6
+        rtol: 1e-5
+        linesearch:
+            type: basic
+            damping: 1
+        pc:
+            type: bjacobi
 cs0001:
     hookesLaw:  
         type: isotropic

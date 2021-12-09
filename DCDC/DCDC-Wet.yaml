@@ -6,16 +6,21 @@ time:
     numstep: 51
     interpolation: linear
 heatxfer:
-    mode: null
+    timestepping: 
+        type: null
 temperature:
     offset: 0
 defmech:
-  mode: quasistatic
-  damage:
-    atol: 1.0e-3
-  sor:
-    omega: 1.4
-  pclag: 5
+    irrevthres: 0.
+    timestepping: 
+        type: quasistatic
+    solver:
+        type: altmin
+    damage:
+        atol: 1.0e-3
+    sor:
+        omega: 1.4
+    pclag: 5
 disp:
   pc:
     type: ml
