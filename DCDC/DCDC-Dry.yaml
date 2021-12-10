@@ -22,6 +22,8 @@ defmech:
         omega: 1.4
     pclag: 5
 disp:
+  type:
+    ksponly
   pc:
     type: ml
 cs0001:
@@ -68,6 +70,3 @@ cs0040:
     displacementbc: no,no,no
     damageBC: yes
     boundaryDamage: 1.
-cs0041:
-    displacementbc: no,no,no
-    damageBC: no

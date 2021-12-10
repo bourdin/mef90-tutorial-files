@@ -27,8 +27,6 @@ disp:
         type: ml
 damage:
     snes:
-        atol: 1e-6
-        rtol: 1e-5
         linesearch:
             type: basic
             damping: 1
