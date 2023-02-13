@@ -17,7 +17,7 @@ heatxfer:
         type: null
 temperature:
     offset: 0
-disp:
+displacement:
     snes:
         linesearch:
             type:    l2
@@ -30,7 +30,7 @@ disp:
         atol: 1.e-7
         rtol: 1.e-7
     pc:
-        type: ml
+        type: gamg
 cs0001:
     hookesLaw:  
         type: isotropic

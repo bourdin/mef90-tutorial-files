@@ -6,7 +6,7 @@ time:
     interpolation: quadratic
 boundaryDisplacement:
   scaling: linear
-boundaryTemp:
+boundarytemperature:
   scaling: linear
 defmech:
   mode: quasistatic
@@ -15,14 +15,14 @@ defmech:
   sor:
     omega: 1.4
   pclag: 5
-disp:
+displacement:
   snes:
     type: ksponly
   pc:
-    type: ml
+    type: gamg
 heatxfer:
     mode: transient
-    initialtemp: 0
+    initialtemperature: 0
 cs0001:
     # center layer
     hookeslaw: 
@@ -63,7 +63,7 @@ cs0030:
     boundaryDisplacement: 0,0,0
     damageBC: no
     tempBC: yes
-    boundaryTemp: 1
+    boundarytemperature: 1
     #flux: 1
 cs0040:
     # bottom edge

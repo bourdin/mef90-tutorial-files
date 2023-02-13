@@ -17,11 +17,11 @@ defmech:
   sor:
     omega: 1.
   pclag: 1
-disp:
+displacement:
   snes:
     lag_jacobian: 5
   pc:
-    type: ml
+    type: gamg
 boundaryDisplacement:
   scaling: file
 cs0001:

@@ -15,13 +15,13 @@ defmech:
     type: quasistatic
   solver:
     type: quasiNewton2
-disp:
+displacement:
   snes:
     lag_jacobian: 5
     linesearch:
       type: cp
   pc:
-    type: ml
+    type: gamg
 cs0001:
     hookesLaw:  
         type: isotropic

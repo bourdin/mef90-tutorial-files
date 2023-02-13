@@ -20,12 +20,12 @@ defmech:
   sor:
     omega: 1.
   pclag: 1
-disp:
+displacement:
   snes:
     lag_jacobian: 1
     #type: ksponly
   pc:
-    type: ml
+    type: gamg
 cs0001:
     hookesLaw:  
         type: isotropic

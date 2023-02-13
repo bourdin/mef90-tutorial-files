@@ -1,24 +1,21 @@
 verbose: 1
-boundaryDisplacement_scaling: linear
 defmech:
     irrevthres: 0.
     timestepping: 
         type: quasistatic
     solver:
         type: QuasiNewton2
-disp:
+displacement:
     snes:
         linesearch:
             type: cp
         lag:
             preconditioner: 5
     pc:
-        type: ml
+        type: gamg
 heatxfer:
     timestepping: 
         type: null
-temperature:
-    offset: 0
 time:
     min: 0
     max: 5
@@ -38,12 +35,12 @@ cs0001:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
-cs0020:
+fs0020:
     displacementbc: yes,yes,no
     boundaryDisplacement: -.5,0,0
     damageBC: yes
     boundaryDamage: 0.
-cs0030:
+fs0030:
     displacementbc: yes,yes,no
     boundaryDisplacement: .5,0,0
     damageBC: yes

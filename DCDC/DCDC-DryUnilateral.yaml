@@ -22,14 +22,14 @@ defmech:
     sor:
         omega: 1.
     pclag: 1
-disp:
+displacement:
   pc:
-    type: ml
-disp:
+    type: gamg
+displacement:
   snes:
     lag_jacobian: 1
   pc:
-    type: ml
+    type: gamg
 damage:
     snes:
         atol: 1e-6

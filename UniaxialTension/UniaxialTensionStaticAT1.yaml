@@ -1,7 +1,13 @@
+### global options
 verbose: 1
-boundaryDisplacement_scaling: linear
+time:
+    min: 0
+    max: 5
+    numstep: 1
+heatxfer:
+    timestepping:
+        type: null
 defmech:
-    irrevthres: 0.
     timestepping: 
         type: quasistatic
     solver:
@@ -9,30 +15,25 @@ defmech:
     damage:
         atol: 1.0e-3
     sor:
-        omega: 1.4
+        omega: 1.
     pclag: 5
-disp:
+displacement:
     snes:
         type: ksponly
     pc:
-        type: ml
-heatxfer:
-    timestepping: 
-        type: null
-temperature:
-    offset: 0
-time:
-    min: 0
-    max: 3
-    numstep: 1
+        type: gamg
+damage:
+    snes:
+        atol: 1e-6
+        rtol: 1e-5
 cs0001:
     hookesLaw:  
         type: isotropic
         YoungsModulus: 1.
-        PoissonRatio:  0.
-        PlaneStress: 0
-    FractureToughness: 1.
-    internallength: .05
+        PoissonRatio:  0.3
+        PlaneStress: 1
+    FractureToughness: 1
+    internallength: .03
     residualstiffness: 0.
     damage:
         type: AT1
@@ -40,13 +41,13 @@ cs0001:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
-cs0020:
-    displacementbc: yes,yes,no
+fs0020:
+    displacementbc: yes,no,no
     boundaryDisplacement: -.5,0,0
     damageBC: yes
     boundaryDamage: 0.
-cs0030:
-    displacementbc: yes,yes,no
+fs0030:
+    displacementbc: yes,no,no
     boundaryDisplacement: .5,0,0
     damageBC: yes
     boundaryDamage: 0.

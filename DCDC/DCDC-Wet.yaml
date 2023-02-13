@@ -21,9 +21,9 @@ defmech:
     sor:
         omega: 1.4
     pclag: 5
-disp:
+displacement:
   pc:
-    type: ml
+    type: gamg
 cs0001:
     hookesLaw:  
         type: isotropic

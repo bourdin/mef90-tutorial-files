@@ -6,7 +6,7 @@ time:
     interpolation: linear
 boundaryDisplacement:
     scaling: linear
-boundaryTemp:
+boundarytemperature:
     scaling: linear
 defmech:
     timeStepping: 
@@ -18,11 +18,11 @@ defmech:
     sor:
         omega: 1.4
     pclag: 5
-disp:
+displacement:
     snes:
         type: ksponly
     pc:
-        type: ml
+        type: gamg
 heatxfer:
     timestepping: 
         type: null
@@ -45,7 +45,7 @@ cs0001:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
-    boundaryTemp: 1.
+    boundarytemperature: 1.
 cs0002:
     # outer layer
     hookeslaw: 
@@ -63,7 +63,7 @@ cs0002:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
-    boundaryTemp: 1.
+    boundarytemperature: 1.
 cs0030:
   # top edge
     displacementbc: no,no,no
