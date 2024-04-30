@@ -23,7 +23,7 @@ displacement:
         atol: 1e-8
         rtol: 1e-5
     pc:
-        type: gamg
+        type: ml
 damage:
     snes:
         atol: 1e-6
