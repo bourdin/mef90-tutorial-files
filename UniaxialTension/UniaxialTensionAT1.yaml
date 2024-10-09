@@ -52,19 +52,3 @@ fs0030:
     boundaryDisplacement: .5,0,0
     damageBC: yes
     boundaryDamage: 0.
-vs0400:
-    displacementbc: yes,yes,yes
-    boundaryDisplacement: -.5,0,0
-    damageBC: yes
-    boundaryDamage: 0.
-vs0401:
-    displacementbc: yes,yes,yes
-    boundaryDisplacement: .5,0,0
-    damageBC: yes
-    boundaryDamage: 0.
-vs0402:
-    displacementbc: yes,yes,no
-    boundaryDisplacement: .5,0,0
-    damageBC: yes
-    boundaryDamage: 0.
-
