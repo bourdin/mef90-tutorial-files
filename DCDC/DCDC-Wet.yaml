@@ -2,14 +2,14 @@
 verbose: 1
 time:
     min: 0
-    max: 10
+    max: 20
     numstep: 51
     interpolation: linear
 heatxfer:
     timestepping: 
         type: null
 temperature:
-    offset: 0
+    export: 0
 defmech:
     irrevthres: 0.
     timestepping: 
@@ -30,8 +30,8 @@ cs0001:
         YoungsModulus: 1.
         PoissonRatio:  0.35
         PlaneStress: 0
-    FractureToughness: .03
-    internallength: .06
+    FractureToughness: .1
+    internallength: .03
     residualstiffness: 0.
     damage:
         type: AT1Elastic
@@ -45,8 +45,8 @@ cs0002:
         YoungsModulus: 1.
         PoissonRatio:  0.35
         PlaneStress: 0
-    FractureToughness: .01
-    internallength: 0.06
+    FractureToughness: .1
+    internallength: 0.03
     residualstiffness: 0.
     damage:
         type: AT1
@@ -54,31 +54,31 @@ cs0002:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
-cs0030:
+fs0030:
     displacementbc: no,yes,no
     boundaryDisplacement: 0,0.5,0.
     damageBC: yes
     boundaryDamage: 0.
-cs0031:
+fs0031:
     displacementbc: no,yes,no
     boundaryDisplacement: 0,-0.5,0.
     damageBC: yes
     boundaryDamage: 0.
-cs0040:
+fs0040:
     displacementbc: no,no,no
     damageBC: yes
     boundaryDamage: 1.
-cs0041:
+fs0041:
     displacementbc: no,no,no
     damageBC: no
 vs0500:
     displacementbc: yes,yes,no
-    boundaryDisplacement: 0,0.5.,0.
+    boundaryDisplacement: 0,0.5,0.
     damageBC: yes
     boundaryDamage: 0.
 vs0501:
     displacementbc: yes,yes,no
-    boundaryDisplacement: 0,-0.5.,0.
+    boundaryDisplacement: 0,-0.5,0.
     damageBC: yes
     boundaryDamage: 0.
 

@@ -9,7 +9,7 @@ heatxfer:
     timestepping: 
         type: null
 temperature:
-    offset: 0
+    export: 0
 defmech:
     irrevthres: 0.
     timestepping: 
@@ -56,12 +56,12 @@ cs0002:
         type: NONE
     displacementbc: no,no,no
     damageBC: no
-cs0030:
+fs0030:
     displacementbc: yes,yes,no
     boundaryDisplacement: 0,0.5,0.
     damageBC: yes
     boundaryDamage: 0.
-cs0031:
+fs0031:
     displacementbc: yes,yes,no
     boundaryDisplacement: 0,-0.5,0.
     damageBC: yes
