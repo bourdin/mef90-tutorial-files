@@ -1,27 +1,26 @@
 ### global options
-### global options
-verbose: 1
+verbose: 0
 time:
-    min: 0
-    max: 10
-    numstep: 51
-    interpolation: linear
+  min: 0
+  max: 10
+  numstep: 51
+  interpolation: linear
 heatxfer:
-    timestepping: 
-        type: null
+  timestepping:
+    type: null
 temperature:
-    offset: 0
+  export: 0
 defmech:
-    irrevthres: 0.
-    timestepping: 
-        type: quasistatic
-    solver:
-        type: altmin
-    damage:
-        atol: 1.0e-3
-    sor:
-        omega: 1.
-    pclag: 1
+  irrevthres: 0.
+  timestepping:
+    type: quasistatic
+  solver:
+    type: altmin
+  damage:
+    atol: 1.0e-3
+  sor:
+    omega: 1.
+  pclag: 1
 displacement:
   pc:
     type: gamg
@@ -31,62 +30,63 @@ displacement:
   pc:
     type: gamg
 damage:
-    snes:
-        atol: 1e-6
-        rtol: 1e-5
-        linesearch:
-            type: basic
-            damping: 1
-        pc:
-            type: bjacobi
+  snes:
+    atol: 1e-6
+    rtol: 1e-5
+    linesearch:
+      type: basic
+      damping: 1
+    pc:
+      type: bjacobi
 cs0001:
-    hookesLaw:  
-        type: isotropic
-        YoungsModulus: 1.
-        PoissonRatio:  0.35
-        PlaneStress: 0
-    FractureToughness: .03
-    internallength: .06
-    residualstiffness: 0.
-    damage:
-        type: AT1Elastic
-    plasticity:
-        type: NONE
-    displacementbc: no,no,no
-    damageBC: no
+  hookesLaw:
+    type: isotropic
+    YoungsModulus: 1.
+    PoissonRatio:  0.35
+    PlaneStress: 0
+  FractureToughness: .03
+  internallength: .06
+  residualstiffness: 0.
+  damage:
+    type: AT1Elastic
+  plasticity:
+    type: NONE
+  displacementbc: no,no,no
+  damageBC: no
 cs0002:
-    hookesLaw:  
-        type: isotropic
-        YoungsModulus: 1.
-        PoissonRatio:  0.35
-        PlaneStress: 0
+  hookesLaw:
+    type: isotropic
+    isotropic:
+      YoungsModulus: 1.
+      PoissonRatio:  0.35
+      PlaneStress: 0
+  damage:
+    type: AT1
     FractureToughness: .01
     internallength: 0.06
     residualstiffness: 0.
-    damage:
-        type: AT1
-    UnilateralContact:
-        type: HydrostaticDeviatoric
-        hybrid: yes
-    plasticity:
-        type: NONE
-    displacementbc: no,no,no
-    damageBC: no
-cs0030:
-    displacementbc: yes,yes,no
-    boundaryDisplacement: 0,0.5,0.
-    damageBC: yes
-    boundaryDamage: 0.
-cs0031:
-    displacementbc: yes,yes,no
-    boundaryDisplacement: 0,-0.5.,0.
-    damageBC: yes
-    boundaryDamage: 0.
-cs0040:
-    displacementbc: no,no,no
-    damageBC: yes
-    boundaryDamage: 1.
-cs0041:
-    displacementbc: no,no,no
-    damageBC: no
-    boundaryDamage: 0.
+  split:
+    type: HydrostaticDeviatoric
+    hybrid: yes
+  plasticity:
+    type: NONE
+  displacementbc: no,no,no
+  damageBC: no
+fs0030:
+  displacementbc: yes,yes,no
+  boundaryDisplacement: 0,0.5,0.
+  damageBC: yes
+  boundaryDamage: 0.
+fs0031:
+  displacementbc: yes,yes,no
+  boundaryDisplacement: 0,-0.5.,0.
+  damageBC: yes
+  boundaryDamage: 0.
+fs0040:
+  displacementbc: no,no,no
+  damageBC: yes
+  boundaryDamage: 1.
+fs0041:
+  displacementbc: no,no,no
+  damageBC: no
+  boundaryDamage: 0.

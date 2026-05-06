@@ -1,72 +1,76 @@
 ### global options
-verbose: 1
+verbose: 0
 time:
-    min: 3
-    max: 5
-    numstep: 51
-    interpolation: linear
+  min: 3
+  max: 5
+  numstep: 51
+  interpolation: linear
 heatxfer:
-    timestepping: 
-        type: null
+  timestepping:
+    type: null
 temperature:
-    export: 0
+  export: 0
 defmech:
-    irrevthres: 0.
-    timestepping: 
-        type: quasistatic
-    solver:
-        type: altmin
-    damage:
-        atol: 1.0e-3
-    sor:
-        omega: 1.4
-    pclag: 5
+  irrevthres: 0
+  timestepping:
+    type: quasistatic
+  solver:
+    type: altmin
+  damage:
+    atol: 1e-3
+  sor:
+    omega: 1.4
+  pclag: 5
 displacement:
-  type:
-    ksponly
+  snes:
+    type: ksponly
   pc:
     type: gamg
 cs0001:
-    hookesLaw:  
-        type: isotropic
-        YoungsModulus: 1.
-        PoissonRatio:  0.35
-        PlaneStress: 0
-    FractureToughness: .03
-    internallength: .06
-    residualstiffness: 0.
-    damage:
-        type: AT1Elastic
-    plasticity:
-        type: NONE
-    displacementbc: no,no,no
-    damageBC: no
+  hookesLaw:
+    type: isotropic
+    isotropic:
+      YoungsModulus: 1
+      PoissonRatio: 0.35
+      PlaneStress: 0
+  damage:
+    type: AT1
+    elastic: yes
+    FractureToughness: 0.1
+    internallength: 0.03
+    residualstiffness: 1.e-6
+  plasticity:
+    type: NONE
+  displacementbc: no,no,no
+  damageBC: no
 cs0002:
-    hookesLaw:  
-        type: isotropic
-        YoungsModulus: 1.
-        PoissonRatio:  0.35
-        PlaneStress: 0
-    FractureToughness: .01
-    internallength: 0.06
-    residualstiffness: 0.
-    damage:
-        type: AT1
-    plasticity:
-        type: NONE
-    displacementbc: no,no,no
-    damageBC: no
+  hookesLaw:
+    type: isotropic
+    isotropic:
+      YoungsModulus: 1
+      PoissonRatio: 0.35
+      PlaneStress: 0
+  damage:
+    type: AT1
+    elastic: no
+    FractureToughness: 0.1
+    internallength: 0.03
+    residualstiffness: 1.0e-6
+  plasticity:
+    type: NONE
+  displacementbc: no,no,no
+  damageBC: no
 fs0030:
-    displacementbc: yes,yes,no
-    boundaryDisplacement: 0,0.5,0.
-    damageBC: yes
-    boundaryDamage: 0.
+  displacementbc: yes,yes,no
+  boundaryDisplacement: 0,0.5,0.
+  damageBC: yes
+  boundaryDamage: 0
 fs0031:
-    displacementbc: yes,yes,no
-    boundaryDisplacement: 0,-0.5,0.
-    damageBC: yes
-    boundaryDamage: 0.
-cs0040:
-    displacementbc: no,no,no
-    damageBC: yes
-    boundaryDamage: 1.
+  displacementbc: yes,yes,no
+  boundaryDisplacement: 0,-0.5,0.
+  damageBC: yes
+  boundaryDamage: 0
+fs0040:
+  displacementbc: no,no,no
+  damageBC: yes
+  boundaryDamage: 1
