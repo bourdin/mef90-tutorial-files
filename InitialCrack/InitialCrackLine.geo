@@ -25,5 +25,5 @@ Plane Surface(11) = {11};
 
 Physical Surface(1) = {10, 11};
 Physical Line(30) = {1};
-Physical Line(40) = {-3};
+Physical Line(40) = {3};
 Physical Line(50) = {6};
