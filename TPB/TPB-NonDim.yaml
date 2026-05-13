@@ -1,5 +1,5 @@
 ### global options
-verbose: 1
+verbose: 0
 time:
   min: 0
   max: 10
@@ -59,18 +59,14 @@ cs0002:
     type: NONE
   displacementbc: no,no,no
   damageBC: no
-cs0030:
+fs0030:
   displacementbc: no,no,no
   damageBC: yes
   boundaryDamage: 1
-cs0031:
+fs0031:
   displacementbc: no,no,no
   damageBC: yes
   boundaryDamage: 1
-cs0040:
-  displacementbc: no,no,no
-  damageBC: yes
-  boundaryDamage: 0
 vs0400:
   displacementBC: yes,yes,no
   boundaryDisplacement: 0,-1,0
