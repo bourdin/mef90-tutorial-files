@@ -3,7 +3,7 @@ verbose: 0
 time:
     min: 0
     max: 1
-    numstep: 41
+    numstep: 101
 boundaryDisplacement:
     scaling: linear
 defmech:
@@ -14,33 +14,24 @@ defmech:
         type: altmin
     damage:
         atol: 1.e-3
+    pclag: 10
+    sor:
+        omega: 1.
 heatxfer:
     timestepping: 
         type: null
 temperature:
     export: 0
-defmech:
-  timestepping: 
-    type: quasistatic
-  damage:
-    atol: 1.0e-3
-  sor:
-    omega: 1.0
-  pclag: 1
 displacement:
   snes:
     type: newtonls
     linesearch:
         type:    l2
-    #    damping: 1.
     max_it: 1000
-    atol: 1.e-3
-    rtol: 1.e-3
+    atol: 1.e-5
+    rtol: 1.e-5
+    lag_jacobian: 10
     lag_preconditioner_persists: yes
-    # lag_jacobian: 100
-#   snes:
-#     lag_jacobian: 5
-    # type: ksponly
   pc:
     type: hypre
 cs0001:
@@ -48,7 +39,8 @@ cs0001:
         type: isotropic
         isotropic:
             YoungsModulus: 1.
-            PoissonRatio: 0.
+            PoissonRatio: 0.3
+            planeStress: yes
     damage:
         type: AT1
         FractureToughness: 1.e-2
@@ -60,6 +52,7 @@ cs0001:
         type: HydrostaticDeviatoric
         HydrostaticDeviatoric:
             gamma: 1e-1
+            hybrid: no
     displacementbc: no,no,no
     damageBC: no
 fs0020:
