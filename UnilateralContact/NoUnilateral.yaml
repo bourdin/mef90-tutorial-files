@@ -53,18 +53,15 @@ cs0001:
 fs0020:
   displacementbc: no,yes,no
   boundaryDisplacement: 0,0,0
-  damageBC: yes
-  boundaryDamage: 0.
+  damageBC: no
 fs0030:
   displacementbc: no,yes,no
   boundaryDisplacement: 0,0,0
-  damageBC: yes
-  boundaryDamage: 0.
+  damageBC: no
 fs0060:
   displacementbc: no,yes,no
   boundaryDisplacement: 0,0,0
-  damageBC: yes
-  boundaryDamage: 0.
+  damageBC: no
 fs0040:
   displacementbc: yes,yes,yes
   boundaryDisplacement: -.5,0,0
